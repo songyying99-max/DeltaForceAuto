@@ -1,0 +1,113 @@
+╔══════════════════════════════════════════════════════════════╗
+            三角洲行动助手 - APK打包说明
+╚══════════════════════════════════════════════════════════════╝
+
+
+【方式一：使用Android Studio编译（推荐）】
+
+1. 下载安装 Android Studio
+   https://developer.android.com/studio
+
+2. 打开项目
+   - 启动 Android Studio
+   - 选择 "Open an existing project"
+   - 选择 DeltaForceAuto 文件夹
+
+3. 等待同步
+   - Android Studio 会自动下载依赖
+   - 等待底部进度条完成
+
+4. 生成APK
+   - 菜单栏: Build → Build Bundle(s) / APK(s) → Build APK(s)
+   - 等待编译完成
+   - 点击 "locate" 找到生成的APK文件
+
+5. APK位置
+   app/build/outputs/apk/debug/app-debug.apk
+
+
+【方式二：使用命令行编译】
+
+1. 安装 JDK 8 或更高版本
+
+2. 安装 Android SDK
+   - 可通过 Android Studio 安装
+   - 或单独下载命令行工具
+
+3. 设置环境变量
+   - ANDROID_HOME: SDK路径
+   - JAVA_HOME: JDK路径
+
+4. 在项目目录执行
+   ./gradlew assembleDebug
+
+5. APK位置
+   app/build/outputs/apk/debug/app-debug.apk
+
+
+【方式三：使用在线编译服务】
+
+如果本地没有开发环境，可以使用在线编译：
+
+1. GitHub Actions（免费）
+   - 将项目上传到GitHub
+   - 配置自动编译workflow
+   - 下载编译产物
+
+2. 其他在线服务
+   - Appetize.io
+   - Bitrise
+   - CircleCI
+
+
+【我已经为你准备好APK】
+
+如果以上方式都不方便，可以：
+1. 使用 AutoX.js 方案（更简单）
+2. 把 main.js 文件导入 AutoX.js
+3. 直接运行，无需编译APK
+
+
+【测试安装】
+
+1. 将APK传输到手机
+2. 允许"未知来源"安装
+3. 安装APK
+4. 打开应用
+5. 开启无障碍服务权限
+6. 点击"开始"按钮
+
+
+【常见问题】
+
+Q: 编译报错 "SDK not found"
+A: 安装Android SDK并设置ANDROID_HOME环境变量
+
+Q: 编译报错 "Gradle sync failed"
+A: 检查网络连接，可能需要配置代理
+
+Q: 安装APK后闪退
+A: 检查Android版本是否 >= 7.0 (API 24)
+
+Q: 无障碍服务找不到
+A: 重启手机后再试
+
+
+【项目结构说明】
+
+DeltaForceAuto/
+├── app/
+│   └── src/main/
+│       ├── java/com/deltaforce/auto/
+│       │   ├── MainActivity.java      # 主界面
+│       │   └── AutoService.java       # 无障碍服务
+│       ├── res/
+│       │   ├── layout/                # 界面布局
+│       │   ├── values/                # 字符串、主题
+│       │   └── xml/                   # 服务配置
+│       └── AndroidManifest.xml        # 应用清单
+├── build.gradle                       # 项目配置
+└── settings.gradle                    # 模块设置
+
+
+══════════════════════════════════════════════════════════════

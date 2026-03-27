@@ -1,0 +1,116 @@
+╔══════════════════════════════════════════════════════════════╗
+        三角洲行动助手 - 如何编译成APK
+╚══════════════════════════════════════════════════════════════╝
+
+
+【方法一：使用Android Studio（推荐）】
+
+第1步：下载安装Android Studio
+   https://developer.android.com/studio
+
+第2步：打开项目
+   - 启动Android Studio
+   - 选择 "Open an existing project"
+   - 选择文件夹：DeltaForceAuto
+
+第3步：等待同步
+   - 首次打开会下载依赖，等待完成
+   - 底部进度条消失即可
+
+第4步：生成APK
+   - 菜单：Build → Build Bundle(s) / APK(s) → Build APK(s)
+   - 等待编译完成（约1-3分钟）
+   - 点击通知中的 "locate" 找到APK
+
+第5步：找到APK文件
+   位置：app/build/outputs/apk/debug/app-debug.apk
+
+第6步：安装到手机
+   - 将APK传到手机
+   - 允许安装未知来源
+   - 安装APK
+
+
+【方法二：使用命令行】
+
+前提：已安装JDK和Android SDK
+
+在DeltaForceAuto目录下执行：
+   ./gradlew assembleDebug
+
+APK位置：app/build/outputs/apk/debug/app-debug.apk
+
+
+【使用说明】
+
+1. 安装APK后打开应用
+
+2. 点击「开启无障碍服务」
+   - 在设置中找到「三角洲行动助手」
+   - 开启无障碍服务
+
+3. 点击「显示悬浮窗」
+   - 允许悬浮窗权限
+
+4. 配置装备
+   - 输入游戏中实际的装备名称
+   - 点击「保存装备配置」
+
+5. 配置路线
+   - 格式：名称,X%,Y%,等待秒数
+   - 每行一个点
+   - 或点击预设模板
+
+6. 点击「开始」运行脚本
+
+
+【悬浮窗功能】
+
+- 拖动：按住可移动位置
+- ▶ 开始：启动自动脚本
+- ⏹ 停止：停止脚本
+- ×：关闭悬浮窗
+- 📍路线/🔧装备：打开主界面配置
+
+
+【项目文件结构】
+
+DeltaForceAuto/
+├── app/src/main/
+│   ├── java/com/deltaforce/auto/
+│   │   ├── MainActivity.java          # 主界面
+│   │   ├── AutoService.java           # 无障碍服务（核心逻辑）
+│   │   └── FloatingWindowService.java # 悬浮窗服务
+│   ├── res/
+│   │   ├── layout/
+│   │   │   ├── activity_main.xml      # 主界面布局
+│   │   │   └── floating_window.xml    # 悬浮窗布局
+│   │   ├── values/
+│   │   │   ├── strings.xml            # 字符串资源
+│   │   │   └── themes.xml             # 主题样式
+│   │   └── xml/
+│   │       └── accessibility_config.xml # 无障碍配置
+│   └── AndroidManifest.xml            # 应用清单
+├── build.gradle                        # 项目构建配置
+└── settings.gradle                     # 模块设置
+
+
+【常见问题】
+
+Q: 编译报错 "SDK not found"
+A: 安装Android SDK并设置ANDROID_HOME环境变量
+
+Q: 编译报错 "Gradle sync failed"  
+A: 检查网络，可能需要配置代理或使用国内镜像
+
+Q: 安装后闪退
+A: 检查Android版本 >= 7.0 (API 24)
+
+Q: 悬浮窗不显示
+A: 在手机设置中允许应用的悬浮窗权限
+
+Q: 脚本不运行
+A: 确保已开启无障碍服务权限
+
+
+══════════════════════════════════════════════════════════════

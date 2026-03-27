@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#CC1a1a2e"
+    android:padding="8dp">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:id="@+id/dragHandle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🎯 三角洲助手"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="×"
+            android:textSize="16sp"
+            android:backgroundTint="#CCda3633"
+            android:textColor="#ffffff"
+            android:padding="0" />
+    </LinearLayout>
+
+    <!-- 状态栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvFloatingStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● 未运行"
+            android:textColor="#CCf85149"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" | 轮次:"
+            android:textColor="#CC888888"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvFloatingRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#CCffff00"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 拾取:"
+            android:textColor="#CC888888"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvFloatingLoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#CCffff00"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- 控制按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="6dp">
+
+        <Button
+            android:id="@+id/btnFloatingStart"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:text="▶ 开始"
+            android:backgroundTint="#CC238636"
+            android:textColor="#ffffff"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnFloatingStop"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:text="⏹ 停止"
+            android:backgroundTint="#CCda3633"
+            android:textColor="#ffffff"
+            android:textSize="11sp"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- 功能按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="4dp">
+
+        <Button
+            android:id="@+id/btnFloatingRoute"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="📍路线"
+            android:backgroundTint="#CC21262d"
+            android:textColor="#CCc9d1d9"
+            android:textSize="9sp" />
+
+        <Button
+            android:id="@+id/btnFloatingEquip"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="🔧装备"
+            android:backgroundTint="#CC21262d"
+            android:textColor="#CCc9d1d9"
+            android:textSize="9sp"
+            android:layout_marginStart="4dp" />
+
+        <Button
+            android:id="@+id/btnFloatingMap"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="🗺️地图"
+            android:backgroundTint="#CC21262d"
+            android:textColor="#CCc9d1d9"
+            android:textSize="9sp"
+            android:layout_marginStart="4dp" />
+
+        <Button
+            android:id="@+id/btnFloatingLog"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="📋日志"
+            android:backgroundTint="#CC21262d"
+            android:textColor="#CCc9d1d9"
+            android:textSize="9sp"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

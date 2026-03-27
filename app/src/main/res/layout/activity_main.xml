@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d1117">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎯 三角洲行动助手"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 状态 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📊 运行状态"
+                android:textColor="#58a6ff"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="状态: 未运行"
+                    android:textColor="#f85149" />
+
+                <TextView
+                    android:id="@+id/tvRound"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="轮次: 0"
+                    android:textColor="#f0883e" />
+
+                <TextView
+                    android:id="@+id/tvLoot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="拾取: 0"
+                    android:textColor="#d2a8ff" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 控制按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎮 控制面板"
+                android:textColor="#58a6ff"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▶ 开始"
+                    android:backgroundTint="#238636"
+                    android:textColor="#ffffff"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⏹ 停止"
+                    android:backgroundTint="#da3633"
+                    android:textColor="#ffffff"
+                    android:enabled="false" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnPermission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚙️ 开启无障碍服务"
+                android:backgroundTint="#21262d"
+                android:textColor="#c9d1d9"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btnFloatingWindow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🪟 显示悬浮窗"
+                android:backgroundTint="#21262d"
+                android:textColor="#c9d1d9"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- 装备配置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔧 入局装备配置"
+                android:textColor="#58a6ff"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="主武器"
+                    android:textColor="#8b949e"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etPrimaryWeapon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="步枪"
+                    android:background="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="防弹衣"
+                    android:textColor="#8b949e"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etArmor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="防弹衣"
+                    android:background="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="头盔"
+                    android:textColor="#8b949e"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etHelmet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="头盔"
+                    android:background="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSaveEquip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💾 保存装备配置"
+                android:backgroundTint="#238636"
+                android:textColor="#ffffff"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- 路线配置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 路线配置"
+                android:textColor="#58a6ff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="格式: 名称,X%,Y%,等待秒数 (每行一个点)"
+                android:textColor="#8b949e"
+                android:textSize="10sp"
+                android:layout_marginTop="4dp" />
+
+            <EditText
+                android:id="@+id/etRoute"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#21262d"
+                android:textColor="#c9d1d9"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnSaveRoute"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="💾 保存"
+                    android:backgroundTint="#238636"
+                    android:textColor="#ffffff"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnLoadRoute"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📂 加载"
+                    android:backgroundTint="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预设模板:"
+                android:textColor="#8b949e"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <Button
+                    android:id="@+id/btnPreset1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🏭工厂"
+                    android:backgroundTint="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="2dp" />
+
+                <Button
+                    android:id="@+id/btnPreset2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🌲森林"
+                    android:backgroundTint="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="2dp" />
+
+                <Button
+                    android:id="@+id/btnPreset3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🏙️城市"
+                    android:backgroundTint="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="2dp" />
+
+                <Button
+                    android:id="@+id/btnPreset4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🏔️山地"
+                    android:backgroundTint="#21262d"
+                    android:textColor="#c9d1d9"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 日志 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#161b22"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📋 运行日志"
+                android:textColor="#58a6ff"
+                android:textSize="14sp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#8b949e"
+                    android:textSize="10sp" />
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btnClearLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="清空日志"
+                android:backgroundTint="#21262d"
+                android:textColor="#8b949e"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

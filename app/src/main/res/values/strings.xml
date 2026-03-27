@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">三角洲行动助手</string>
+    <string name="accessibility_description">三角洲行动自动脚本需要无障碍服务来执行自动点击、滑动等操作，实现自动搜索物资和撤离功能。</string>
+    <string name="start">开始运行</string>
+    <string name="stop">停止运行</string>
+    <string name="settings">设置</string>
+    <string name="status_ready">就绪</string>
+    <string name="status_running">运行中</string>
+    <string name="status_stopped">已停止</string>
+    <string name="permission_required">需要无障碍服务权限</string>
+    <string name="go_to_settings">去设置</string>
+</resources>
